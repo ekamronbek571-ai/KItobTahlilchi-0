@@ -60,7 +60,7 @@ def admin_menu() -> InlineKeyboardMarkup:
 
 async def analyze_image_with_gemini(image_data: bytes, mime_type: str = "image/jpeg") -> str:
     image_b64 = base64.standard_b64encode(image_data).decode("utf-8")
-    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
     payload = {
         "contents": [{
             "parts": [
@@ -78,7 +78,7 @@ async def analyze_image_with_gemini(image_data: bytes, mime_type: str = "image/j
 
 
 async def get_recommendation_from_gemini(user_request: str, books_list: str) -> str:
-    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
     payload = {
         "contents": [{
             "parts": [{"text": f"Kitoblar:\n{books_list}\n\nSo'rov: {user_request}\n\nO'zbek tilida qisqa tavsiya ber."}]
