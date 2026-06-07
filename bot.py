@@ -80,7 +80,7 @@ async def analyze_image_openrouter(image_bytes: bytes) -> str:
     }
 
     payload = {
-        "model": "google/gemini-flash-1.5-8b",
+        "model": "meta-llama/llama-4-maverick:free",
         "messages": [
             {
                 "role": "user",
@@ -132,7 +132,7 @@ async def get_recommendation_openrouter(user_request: str, books_list: str) -> s
     }
 
     payload = {
-        "model": "google/gemini-flash-1.5-8b",
+        "model": "meta-llama/llama-4-scout:free",
         "messages": [
             {
                 "role": "system",
